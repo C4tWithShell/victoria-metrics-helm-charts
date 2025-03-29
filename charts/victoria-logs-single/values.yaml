@@ -77,6 +77,10 @@ server:
     loggerFormat: json
     httpListenAddr: :9428
 
+    http.header.hsts: "max-age=31536000; includeSubDomains"
+    http.header.frameOptions: "DENY"
+    http.header.csp: "default-src 'self'" # For external Server URL use "default-src 'self'; connect-src 'self' *.example.com/"
+
   # -- Specify pod lifecycle
   lifecycle: {}
 
